@@ -1,17 +1,17 @@
-# Warring States Optimization Algorithm (WSOA)
+# 战国优化算法 (Warring States Optimization Algorithm, WSOA)
 
-**A Novel Heuristic Optimization Algorithm Inspired by the Chinese Warring States Period History**
+**一种受中国战国历史启发的全新启发式优化算法**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Python 3.8+](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/)
 
-[English](README.md) | [中文](README_CN.md)
+[English](README_EN.md) | [中文](README.md)
 
-## Citation
+## 引用
 
-If you use WSOA in your research, please cite the following paper:
+如果您在研究中使用了WSOA，请引用以下论文：
 
-> **Chaoqun Li.** Warring States Optimization Algorithm (WSOA): A Novel Heuristic Optimization Algorithm Inspired by the Chinese Warring States Period History. *DOI: coming soon*
+> **Chaoqun Li.** Warring States Optimization Algorithm (WSOA): A Novel Heuristic Optimization Algorithm Inspired by the Chinese Warring States Period History. *DOI: 即将发布*
 
 **BibTeX:**
 
@@ -24,114 +24,116 @@ If you use WSOA in your research, please cite the following paper:
 }
 ```
 
-> Please update the BibTeX entry once the DOI is officially assigned.
+> DOI正式分配后，请更新上述BibTeX条目。
 
 ---
 
-## Introduction
+## 简介
 
-WSOA is a population-based metaheuristic optimization algorithm inspired by the historical dynamics of the Warring States period (475–221 BC) in ancient China. Seven subpopulations (representing the seven states: Qin, Qi, Chu, Yan, Zhao, Wei, Han) compete and cooperate in the search space, ultimately converging to the global optimum through a process of "unification".
+WSOA是一种基于种群的元启发式优化算法，灵感来源于中国战国时期（公元前475年—前221年）的历史博弈。算法中7个子种群分别代表战国七雄（秦、齐、楚、燕、赵、魏、韩），在搜索空间中既竞争又合作，通过"变法图强"、"合纵连横"、"征伐吞并"等机制驱动寻优，最终"大一统"收敛到全局最优解。
 
-## Algorithm Overview
+## 算法概述
 
-### Five Phases
+### 五大阶段
 
-| Phase | Name | Mechanism |
-|-------|------|-----------|
-| I | **Seven States Established** | Initialize 7 subpopulations + opposition-based learning |
-| II | **Reform & Compete** | 7 distinct search strategies (Levy flight / multi-teacher learning / Cauchy mutation / dual-elite guidance / adaptive DE / DE mutation / sine-cosine) + strategy adaptation |
-| III | **Alliance & Diplomacy** | Vertical alliance (weak states share info) ; Horizontal alliance (strong state attracts talent) ; Espionage mechanism ; Befriend distant, attack nearby |
-| IV | **Conquest & Annexation** | Weakest state eliminated, resources redistributed ; Dynamic population rebalancing |
-| V | **Unification** | Merge all populations, multi-operator fine-grained search |
+| 阶段 | 名称 | 机制 |
+|------|------|------|
+| 一 | **七国初立** | 初始化7个子种群 + 反向学习增强多样性 |
+| 二 | **变法争雄** | 7种搜索策略（Lévy飞行 / 多教师学习 / 柯西变异 / 双精英引导 / 自适应差分 / DE变异 / 正弦余弦）+ 策略自适应机制 |
+| 三 | **合纵连横** | 弱国联盟共享信息（合纵）；强国吸引人才（连横）；间谍机制；远交近攻 |
+| 四 | **征伐吞并** | 最弱国被灭，资源分配给强国；动态种群资源再分配 |
+| 五 | **大一统** | 合并所有种群，多算子混合精细搜索 |
 
-### Benchmark Suites
+### 测试套件
 
-Supports 4 IEEE CEC standard test suites:
+支持4个IEEE CEC标准测试套件：
 
-| Suite | Functions | Dimensions | Year |
-|-------|-----------|-----------|------|
+| 套件 | 函数数 | 标准维度 | 年份 |
+|------|--------|---------|------|
 | CEC2005 | 25 | 10, 30 | 2005 |
 | CEC2014 | 30 | 10, 30, 50 | 2014 |
 | CEC2017 | 29 | 10, 30, 50 | 2017 |
 | CEC2022 | 12 | 10, 20 | 2022 |
 
-### Comparison Algorithms (11)
+### 对比算法（11种）
 
-| Algorithm | Full Name | Year |
-|-----------|-----------|------|
-| PSO | Particle Swarm Optimization | 1995 |
-| DE | Differential Evolution | 1997 |
-| GA | Genetic Algorithm | 1975 |
-| ABC | Artificial Bee Colony | 2007 |
-| GWO | Grey Wolf Optimizer | 2014 |
-| WOA | Whale Optimization Algorithm | 2016 |
-| SCA | Sine Cosine Algorithm | 2016 |
-| HHO | Harris Hawks Optimization | 2019 |
-| MPA | Marine Predators Algorithm | 2020 |
-| AO | Aquila Optimizer | 2021 |
-| DBO | Dung Beetle Optimizer | 2023 |
+| 算法 | 全称 | 年份 |
+|------|------|------|
+| PSO | 粒子群优化 (Particle Swarm Optimization) | 1995 |
+| DE | 差分进化 (Differential Evolution) | 1997 |
+| GA | 遗传算法 (Genetic Algorithm) | 1975 |
+| ABC | 人工蜂群 (Artificial Bee Colony) | 2007 |
+| GWO | 灰狼优化 (Grey Wolf Optimizer) | 2014 |
+| WOA | 鲸鱼优化 (Whale Optimization Algorithm) | 2016 |
+| SCA | 正弦余弦算法 (Sine Cosine Algorithm) | 2016 |
+| HHO | 哈里斯鹰优化 (Harris Hawks Optimization) | 2019 |
+| MPA | 海洋捕食者算法 (Marine Predators Algorithm) | 2020 |
+| AO | 天鹰优化 (Aquila Optimizer) | 2021 |
+| DBO | 蜣螂优化 (Dung Beetle Optimizer) | 2023 |
 
-## Project Structure
+## 项目结构
 
 ```
-├── README.md                   # Project documentation
-├── run.py                      # Entry point (CLI)
-├── warring_states_algorithm.py # WSOA core algorithm
-├── benchmark_functions.py      # CEC benchmark functions (via opfunu)
-├── comparison_algorithms.py    # 11 comparison algorithms
-├── plotting.py                 # Visualization module
-├── run_experiment.py           # Experiment runner + CSV export
-└── results/                    # Experiment outputs
+├── README.md                   # 中文说明（默认）
+├── README_EN.md                # English documentation
+├── CITATION.bib                # 引用文件
+├── run.py                      # 启动脚本（命令行入口）
+├── warring_states_algorithm.py # WSOA 核心算法
+├── benchmark_functions.py      # CEC测试函数（基于opfunu）
+├── comparison_algorithms.py    # 11种对比算法
+├── plotting.py                 # 可视化模块
+├── run_experiment.py           # 实验运行 + CSV导出
+└── results/                    # 实验结果输出
     └── <SUITE>/
-        ├── results_summary.csv     # Best/Worst/Mean/Median/Std
-        ├── results_ranking.csv     # Rankings + average rank
-        ├── results_raw.csv         # Raw fitness per run
-        ├── results_convergence.csv # Convergence curve data
-        ├── convergence_F*.png      # Convergence plots
-        ├── summary_comparison.png  # Bar chart comparison
-        ├── ranking_radar.png       # Ranking radar chart
-        └── experiment_*.log        # Experiment log
+        ├── results_summary.csv     # 汇总统计 (Best/Worst/Mean/Median/Std)
+        ├── results_ranking.csv     # 排名表 + 平均排名
+        ├── results_raw.csv         # 每次运行原始数据
+        ├── results_convergence.csv # 收敛曲线数据
+        ├── convergence_F*.png      # 收敛曲线图
+        ├── summary_comparison.png  # 柱状对比图
+        ├── ranking_radar.png       # 排名雷达图
+        └── experiment_*.log        # 实验日志
 ```
 
-## Requirements
+## 环境依赖
 
 ```bash
 pip install numpy matplotlib opfunu
 ```
 
-## Quick Start
+## 快速开始
 
 ```bash
-# Quick test (dim=10, 3 runs, 100 iterations)
+# 快速测试（dim=10, 3次运行, 100次迭代）
 python run.py --quick
 
-# Default run (CEC2022, dim=10, 200 iterations, 5 runs)
+# 默认运行（CEC2022, dim=10, 200次迭代, 5次运行）
 python run.py
 
-# Specify suite and dimension
+# 指定测试套件和维度
 python run.py --suite CEC2017 --dim 30
 
-# Run all 4 CEC suites
+# 运行全部4个CEC套件
 python run.py --all_suites --dim 10 --runs 5
 
-# Custom parameters
+# 自定义参数
 python run.py --suite CEC2014 --dim 30 --runs 10 --max_iter 500
 ```
 
-## CSV Output (for Paper)
+## CSV输出说明（论文用）
 
-| File | Content | Paper Usage |
-|------|---------|-------------|
-| `results_summary.csv` | Best/Worst/Mean/Median/Std | Main result table |
-| `results_ranking.csv` | Per-function rankings + average rank | Friedman test |
-| `results_raw.csv` | Raw fitness values per run | Wilcoxon rank-sum test |
-| `results_convergence.csv` | Convergence curve data | Redraw in Origin/MATLAB |
+| 文件 | 内容 | 论文用途 |
+|------|------|---------|
+| `results_summary.csv` | Best/Worst/Mean/Median/Std | 主结果表 (Table) |
+| `results_ranking.csv` | 各函数排名 + 平均排名 | Friedman检验 |
+| `results_raw.csv` | 每次运行原始适应度值 | Wilcoxon秩和检验 |
+| `results_convergence.csv` | 收敛曲线数据 | 用Origin/MATLAB重绘收敛图 |
 
-## License
+## 许可证
 
-This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
+本项目采用MIT许可证 — 详见 [LICENSE](LICENSE) 文件。
 
-## Contact
+## 联系方式
 
-- **Author:** Chaoqun Li
-- **GitHub:** [supergroupli](https://github.com/supergroupli)
+- **作者：** Chaoqun Li（李超群）
+- **GitHub：** [supergroupli](https://github.com/supergroupli)
