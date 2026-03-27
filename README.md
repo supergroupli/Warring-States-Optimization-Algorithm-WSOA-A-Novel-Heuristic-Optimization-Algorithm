@@ -5,6 +5,8 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Python 3.8+](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/)
 
+[English](README.md) | [中文](README_CN.md)
+
 ## Citation
 
 If you use WSOA in your research, please cite the following paper:
